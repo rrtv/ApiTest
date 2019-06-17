@@ -58,7 +58,7 @@ public class TestPost extends TestAPI {
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             for(int j=7;j<excelData[i].length-2;j=j+2){
                 //因为每种请求的参数个数不确定，在这里进行非空判断
-                if(excelData[i][j]==null || excelData[i][j+1]==nul){
+                if(excelData[i][j]==null || excelData[i][j+1]==null){
                     continue;
                 }
                 NameValuePair pair = new BasicNameValuePair(excelData[i][j].toString(),excelData[i][j+1].toString());
