@@ -1,10 +1,12 @@
 package api;
 
+import utils.DbDataProcess;
+
 import java.io.FileInputStream;
 import java.util.Properties;
 
 //测试基类
-public class TestAPI {
+public class TestAPI extends DbDataProcess {
     public Properties prop;
     public String excelPath;
     public String host;

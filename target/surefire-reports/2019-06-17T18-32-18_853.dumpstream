@@ -1,4 +1,0 @@
-# Created at 2019-06-17T18:32:19.233
-Boot Manifest-JAR contains absolute paths in classpath 'G:\ideaProject\ApiTest\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-

@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
+<<<<<<< HEAD:src/main/resources/TestGet.xml
 <suite name = "TestGetSuite">
     <test name = "TestGet">
 
         <classes>
             <class name = "api.TestGet"/>
+=======
+<suite name = "testLoginSuite">
+    <test name = "testPost">
+        <classes>
+            <class name = "api.TestPost">
+                 <methods>
+                     <include name="testPostRequest"/>
+                </methods>
+            </class>
+>>>>>>> f12f79e2789337559b7ce51effa3c82aca3bfa2a:src/main/resources/testUserProfile.xml
         </classes>
     </test>
 
@@ -15,3 +26,4 @@
     </listeners>
 
 </suite>
+

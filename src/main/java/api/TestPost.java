@@ -9,6 +9,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import utils.DbDataProcess;
 import utils.ExcelProcess;
 import utils.JSONParser;
 
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TestPost extends TestAPI {
     RestfulClient client;
@@ -40,9 +42,9 @@ public class TestPost extends TestAPI {
         //设置好请求头部
         hashHead = new HashMap<String, String>();
         hashHead.put("Content-Type", "application/x-www-form-urlencoded");
-        hashHead.put("token","rrtv-f021ec952edaf4c615570a6957fa788105360aed");
-        hashHead.put("clientType","ios_rrsp_jzsp");
-        hashHead.put("clientVersion","4.1.5");
+        hashHead.put("token", "rrtv-f021ec952edaf4c615570a6957fa788105360aed");
+        hashHead.put("clientType", "ios_rrsp_jzsp");
+        hashHead.put("clientVersion", "4.1.5");
     }
 
 
