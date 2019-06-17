@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name = "testLoginSuite">
-    <test name = "loginTest">
-<!--        <parameter name="username" value="yangxr"/>-->
-<!--        <parameter name="password" value="123456"/>-->
+<suite name = "TestGetSuite">
+    <test name = "TestGet">
+
         <classes>
-            <class name = "testcase.TestCase"/>
+            <class name = "api.TestGet"/>
         </classes>
     </test>
 

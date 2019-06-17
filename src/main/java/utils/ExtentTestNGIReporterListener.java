@@ -22,7 +22,7 @@ public class ExtentTestNGIReporterListener implements IReporter {
     static String minute = String.format("%tM", date);
     static String second = String.format("%tS", date);
     //生成的路径以及文件名
-    private static final String OUTPUT_FOLDER = "test-output/ExtentReport/";
+    private static final String OUTPUT_FOLDER = "G:/ideaProject/ApiTest/ExtentReport/";
     private static final String FILE_NAME = "index" + form + hour + minute + second + "ExtentReport" + ".html";
     private ExtentReports extent;
 
@@ -111,8 +111,8 @@ public class ExtentTestNGIReporterListener implements IReporter {
         htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);
         //怎么样解决cdn.rawgit.com访问不了的情况
         htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);
-        htmlReporter.config().setDocumentTitle("UI自动化测试报告");
-        htmlReporter.config().setReportName("UI自动化测试报告");
+        htmlReporter.config().setDocumentTitle("ApiTest自动化测试报告");
+        htmlReporter.config().setReportName("ApiTest自动化测试报告");
         htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setTheme(Theme.STANDARD);

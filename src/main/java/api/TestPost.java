@@ -45,7 +45,6 @@ public class TestPost extends TestAPI {
         hashHead.put("clientVersion","4.1.5");
     }
 
-    //test提交
 
     @Test
     public void testPostRequest() throws ClientProtocolException, IOException {
@@ -67,10 +66,6 @@ public class TestPost extends TestAPI {
                 params.add(pair);
             }
 
-//            params.add(new BasicNameValuePair("token", "rrtv-9eb0d4ea4ec5fb24609533522a05d46f86460c71"));
-//            params.add(new BasicNameValuePair("seasonId","12517"));
-
-
             //发出请求
             client.sendPost(url,params, hashHead);
 
@@ -88,36 +83,5 @@ public class TestPost extends TestAPI {
 
         }
     }
-
-
-//    @Test
-//    public void testPostRequest() {
-//        Assert.assertEquals(code, "0000");
-//        Assert.assertEquals(responseCode,200);
-//    }
-//
-//    @BeforeClass
-//    public void beforeClass() throws ClientProtocolException, IOException {
-//        client = new RestfulClient();
-//
-//        List<NameValuePair> params = new ArrayList<NameValuePair>();
-//        params.add(new BasicNameValuePair("seasonId", "12517"));
-//        params.add(new BasicNameValuePair("token", "rrtv-9eb0d4ea4ec5fb24609533522a05d46f86460c71"));
-//
-//        HashMap<String, String> hashHead = new HashMap<String, String>();
-//        hashHead.put("Content-Type", "application/x-www-form-urlencoded");
-//        hashHead.put("token","rrtv-9eb0d4ea4ec5fb24609533522a05d46f86460c71");
-//        hashHead.put("clientType","android_RRMJ_REPLACE");
-//        hashHead.put("clientVersion","4.1.6");
-//
-//        client.sendPost(url,params,hashHead);
-//
-//        responseBody = client.getBodyInJSON();
-//        responseCode = client.getCodeInNumber();
-//
-//        System.out.println(responseBody);
-//        jParser = new JSONParser();
-//        code = jParser.getCode(responseBody);
-//    }
 
 }
