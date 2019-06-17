@@ -2,11 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name = "testLoginSuite">
-    <test name = "loginTest">
-<!--        <parameter name="username" value="yangxr"/>-->
-<!--        <parameter name="password" value="123456"/>-->
+    <test name = "testPost">
         <classes>
-            <class name = "testcase.TestCase"/>
+            <class name = "api.TestPost">
+                 <methods>
+                     <include name="testPostRequest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 
@@ -16,3 +18,4 @@
     </listeners>
 
 </suite>
+
