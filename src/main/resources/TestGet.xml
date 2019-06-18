@@ -10,7 +10,7 @@
                      <include name="testPostRequest"/>
                 </methods>
             </class>
-       </classes>
+        </classes>
     </test>
 
     <listeners>
