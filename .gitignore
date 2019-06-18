@@ -1,2 +1,8 @@
-.idea/*
 .idea
+*.iml
+out
+gen
+report/
+target
+
+/.gitignore

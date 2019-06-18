@@ -33,13 +33,21 @@ public class RestfulClient {
     HashMap<String, String> responseHeads;
 
     //通过httpclient获取请求的反馈
-    public void getResponse(String url) throws ClientProtocolException, IOException {
+    public void getResponse(String url,HashMap<String,String> headers) throws ClientProtocolException, IOException {
         httpclient = HttpClients.createDefault();
         httpGet = new HttpGet(url);
+        //设置头部信息
+        Set<String> set = headers.keySet();
+        for(Iterator<String> iterator = set.iterator(); iterator.hasNext();){
+            String key = iterator.next();
+            String value = headers.get(key);
+            httpGet.addHeader(key, value);
+        }
+
         //httpGet.setHeader("Content-Type","application/json;charset=utf8");
-        httpGet.setHeader("token","rrtv-9eb0d4ea4ec5fb24609533522a05d46f86460c71");
-        httpGet.setHeader("clientType","android_RRMJ_REPLACE");
-        httpGet.setHeader("clientVersion","4.1.6");
+//        httpGet.setHeader("token","rrtv-9eb0d4ea4ec5fb24609533522a05d46f86460c71");
+//        httpGet.setHeader("clientType","android_RRMJ_REPLACE");
+//        httpGet.setHeader("clientVersion","4.1.6");
         httpResponse = httpclient.execute(httpGet);
 
     }

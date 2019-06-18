@@ -8,7 +8,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/../apptest/pom.xml" />
         <option value="$PROJECT_DIR$/../dubbo-business/pom.xml" />
       </list>
     </option>
