@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<<<<<<< HEAD:src/main/resources/TestPost.xml
-<suite name = "TestPostSuite">
-    <test name = "TestPost">
-
-        <classes>
-            <class name = "test.TestPost_excel"/>
-=======
 <suite name = "testLoginSuite">
     <test name = "testPost">
         <classes>
@@ -16,7 +9,6 @@
                      <include name="testPostRequest"/>
                 </methods>
             </class>
->>>>>>> f12f79e2789337559b7ce51effa3c82aca3bfa2a:target/classes/testUserProfile.xml
         </classes>
     </test>
 
