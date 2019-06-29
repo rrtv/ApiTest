@@ -1,8 +1,8 @@
-package api;
+package test;
 
+import client.RestfulClient;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.NameValuePair;
-import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.message.BasicNameValuePair;
 import org.testng.Assert;
@@ -10,20 +10,19 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utils.ExcelProcess;
 import utils.JSONParser;
-import client.RestfulClient;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class TestGet extends TestAPI{
+public class TestPost_excel extends TestAPI {
     RestfulClient client;
     JSONObject responseBody;
     JSONParser jParser;
     int responseCode;
     String code;
-    String url;
+    String url;//= "http://uat-api.rr.tv/v3plus/season/detail";
     String postBody;
     Object[][] excelData;
     HashMap<String, String> hashHead;
@@ -32,7 +31,7 @@ public class TestGet extends TestAPI{
     @BeforeClass
     public void setup() throws ClientProtocolException, IOException {
         //读取用例excel
-        excelData = ExcelProcess.proessExcel(excelPath, 0);
+        excelData = ExcelProcess.proessExcel(excelPath, 1);
 
         //实例化client
         client = new RestfulClient();
@@ -40,13 +39,14 @@ public class TestGet extends TestAPI{
         //设置好请求头部
         hashHead = new HashMap<String, String>();
         hashHead.put("Content-Type", "application/x-www-form-urlencoded");
-        hashHead.put("token","rrtv-3b6c27f7a2ec08bdae6c95b631968891f897a95e");
-        hashHead.put("clientType","ios_rrsp_jzsp");
-        hashHead.put("clientVersion","4.2.1");
+        hashHead.put("token", "rrtv-f021ec952edaf4c615570a6957fa788105360aed");
+        hashHead.put("clientType", "ios_rrsp_jzsp");
+        hashHead.put("clientVersion", "4.1.5");
     }
 
+
     @Test
-    public void testGetRequest() throws ClientProtocolException, IOException {
+    public void testPostRequest() throws ClientProtocolException, IOException {
         //从第二行开始遍历表单，跳过表头
         for(int i=1;i<excelData.length;i++){
             //从特定位置读取测试数据
@@ -54,10 +54,19 @@ public class TestGet extends TestAPI{
             url = host+address;
             String checkPoint = excelData[i][4].toString();
             String checkValue = excelData[i][5].toString();
-
+            //用NameValuePair存储所有请求参数
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            for(int j=7;j<excelData[i].length-2;j=j+2){
+                //因为每种请求的参数个数不确定，在这里进行非空判断
+                if(excelData[i][j]==null || excelData[i][j+1]==null){
+                    continue;
+                }
+                NameValuePair pair = new BasicNameValuePair(excelData[i][j].toString(),excelData[i][j+1].toString());
+                params.add(pair);
+            }
 
             //发出请求
-            client.getResponse(url,hashHead);
+            client.sendPost(url,params, hashHead);
 
             responseBody = client.getBodyInJSON();
             responseCode = client.getCodeInNumber();
@@ -66,12 +75,12 @@ public class TestGet extends TestAPI{
             JSONParser jParser = new JSONParser();
             boolean result = jParser.isResponseCorrect(responseBody, checkPoint, checkValue);
 
+
             //断言判断结果
             Assert.assertTrue(result);
             Assert.assertEquals(responseCode, 200);
 
         }
     }
-
 
 }

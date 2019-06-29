@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--<properties resource="...config.properties">-->
+        <!--<property name="username" value="root"/>-->
+        <!--<property name="password" value="e9V5ubCU0SnACDXq"/>-->
+    <!--</properties>-->
+
+    <!-- 配置指定使用的LOG4J输出日志 -->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+
+    <!-- 数据库配置 -->
+    <environments default="TEST">
+        <environment id="TEST">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://10.10.2.148:3306/autotest?useUnicode=true&amp;characterEncoding=utf8" />
+                <property name="username" value="root" />
+                <property name="password" value="e9V5ubCU0SnACDXq" />
+
+                <!--<property name="driver" value="${driver}"/>-->
+                <!--<property name="url" value="${url}"/>-->
+                <!--<property name="username" value="${username}"/>-->
+                <!--<property name="password" value="${password}"/>-->
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--类型别名-->
+    <!--<typeAliases>-->
+        <!--<typeAlias alias="post" type="PostCase"/>-->
+    <!--</typeAliases>-->
+
+    <!-- mybatis的SQL语句和映射配置文件 -->
+    <mappers>
+        <!--<mapper resource="mapper/PostCaseMapper.xml"/>-->
+        <!--<mapper resource="mapper/GetCaseMapper.xml"/>-->
+
+        <!-- 将包内的映射器接口实现全部注册为映射器 -->
+        <package name="mapper"/>
+    </mappers>
+</configuration>

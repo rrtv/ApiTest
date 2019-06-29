@@ -6,12 +6,12 @@
     <test name = "TestPost">
 
         <classes>
-            <class name = "api.TestPost"/>
+            <class name = "test.TestPost_excel"/>
 =======
 <suite name = "testLoginSuite">
     <test name = "testPost">
         <classes>
-            <class name = "api.TestPost">
+            <class name = "test.TestPost_excel">
                  <methods>
                      <include name="testPostRequest"/>
                 </methods>
