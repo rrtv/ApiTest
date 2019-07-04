@@ -20,8 +20,12 @@
         <result property="key4Value" column="key4Value"/>
     </resultMap>
 
+    <select id="selectCase" resultType="String">
+        select protocol from post_case where  id=1
+    </select>
+
     <select id="selectById" resultMap="PostCase">
-        select *FROM  post_case where  id = #{id}
+        select *FROM  post_case where  id={id}
     </select>
 
     <select id="selectAll" resultType="model.PostCase">

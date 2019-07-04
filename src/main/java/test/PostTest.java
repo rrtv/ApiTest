@@ -35,8 +35,8 @@ public class PostTest extends TestAPI {
 //            List<PostCase> postCaseList = openSession.selectList("SelectPostCase");
 //            printPostCaseList(postCaseList);
 
-            PostCase postCase = openSession.selectOne("mapper.PostCaseMapper.selectById");
-            System.out.println(postCase);
+            String protocal = openSession.selectOne("mapper.PostCaseMapper.selectCase");
+            System.out.println(protocal);
 
 //            PostCaseMapper mapper = openSession.getMapper(PostCaseMapper.class);
 //            PostCase postCase2 = mapper.selectById(1);
@@ -48,9 +48,9 @@ public class PostTest extends TestAPI {
         }
     }
 
-    private void printPostCaseList(List<PostCase> PostCaseList){
-        for (PostCase postCase:PostCaseList){
-            System.out.println("postcase的address"+postCase.getAddress());
-        }
-    }
+//    private void printPostCaseList(List<PostCase> PostCaseList){
+//        for (PostCase postCase:PostCaseList){
+//            System.out.println("postcase的address"+postCase.getAddress());
+//        }
+//    }
 }

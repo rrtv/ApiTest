@@ -32,15 +32,15 @@
 
     <!--类型别名-->
     <!--<typeAliases>-->
-        <!--<typeAlias alias="post" type="PostCase"/>-->
+        <!--<typeAlias alias="" type=""/>-->
     <!--</typeAliases>-->
 
     <!-- mybatis的SQL语句和映射配置文件 -->
     <mappers>
-        <!--<mapper resource="mapper/PostCaseMapper.xml"/>-->
-        <!--<mapper resource="mapper/GetCaseMapper.xml"/>-->
+        <mapper resource="mapper/PostCaseMapper.xml"/>
+        <mapper resource="mapper/GetCaseMapper.xml"/>
 
         <!-- 将包内的映射器接口实现全部注册为映射器 -->
-        <package name="mapper"/>
+        <!--<package name="mapper"/>-->
     </mappers>
 </configuration>
