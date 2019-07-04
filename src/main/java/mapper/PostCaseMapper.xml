@@ -25,11 +25,11 @@
     </select>
 
     <select id="selectById" resultMap="PostCase">
-        select *FROM  post_case where  id={id}
+        select * FROM  post_case where  id= #{id}
     </select>
 
     <select id="selectAll" resultType="model.PostCase">
-        select *FROM post_case
+        select * FROM post_case
     </select>
     
 

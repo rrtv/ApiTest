@@ -1,5 +1,13 @@
 package model;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  *postcase表对应的实体类
  */
@@ -7,7 +15,7 @@ public class PostCase {
 
     //postcase表的所有字段
     private int id;
-    private String test_name;
+    private String testName;
     private String protocal;
     private String address;
     private String checkpoint;
@@ -27,7 +35,7 @@ public class PostCase {
     }
 
     public String getTest_name() {
-        return test_name;
+        return testName;
     }
 
     public String getProtocal() {
@@ -86,8 +94,8 @@ public class PostCase {
         this.id = id;
     }
 
-    public void setTest_name(String test_name) {
-        this.test_name = test_name;
+    public void setTest_name(String testName) {
+        this.testName = testName;
     }
 
     public void setProtocal(String protocal) {
@@ -140,6 +148,28 @@ public class PostCase {
 
     public void setKey4Value(String key4Value) {
         this.key4Value = key4Value;
+    }
+
+    public List<NameValuePair> getKeyAndValue(){
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+
+        if (this.key1!=null && this.key1Value!=null){
+            NameValuePair pair = new BasicNameValuePair(this.key1, this.key1Value);
+            params.add(pair);
+        }
+        if (this.key2!=null && this.key2Value!=null){
+            NameValuePair pair = new BasicNameValuePair(this.key2, this.key2Value);
+            params.add(pair);
+        }
+        if (this.key3!=null && this.key3Value!=null){
+            NameValuePair pair = new BasicNameValuePair(this.key3, this.key3Value);
+            params.add(pair);
+        }
+        if (this.key4!=null && this.key4Value!=null){
+            NameValuePair pair = new BasicNameValuePair(this.key4, this.key4Value);
+            params.add(pair);
+        }
+        return  params;
     }
 
     @Override
