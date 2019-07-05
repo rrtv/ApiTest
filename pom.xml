@@ -149,7 +149,7 @@
                 <inherited>true</inherited>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src\main\resources\testPost.xml</suiteXmlFile>
+                        <suiteXmlFile>src\main\resources\TestPost.xml</suiteXmlFile>
                         <suiteXmlFile>src\main\resources\TestGet.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
