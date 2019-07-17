@@ -3,4 +3,34 @@
 
 <mapper namespace="mapper.GetCaseMapper">
 
+<resultMap id="GetCase" type="model.GetCase">
+    <id property="id" column="id"/>
+    <result property="testName" column="test_name"/>
+    <result property="protocal" column="protocal"/>
+    <result property="address" column="address"/>
+    <result property="checkpoint" column="checkpoint"/>
+    <result property="passcriteria" column="passcriteria"/>
+    <result property="status" column="status"/>
+    <result property="key1Value" column="key1Value"/>
+    <result property="key2" column="key2"/>
+    <result property="key2Value" column="key2Value"/>
+    <result property="key3" column="key3"/>
+    <result property="key3Value" column="key3Value"/>
+    <result property="key4" column="key4"/>
+    <result property="key4Value" column="key4Value"/>
+</resultMap>
+
+<select id="selectCase" resultType="String">
+        select protocol from get_case where  id=1
+    </select>
+
+<select id="selectById" resultMap="GetCase">
+        select * FROM  get_case where  id= #{id}
+    </select>
+
+<select id="selectAll" resultType="model.GetCase">
+        select * FROM get_case
+    </select>
+
+
 </mapper>

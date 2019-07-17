@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "testGet">
+    <test name = "testGet">
+        <classes>
+            <class name = "test.TestGet_Mybatis">
+                <methods>
+                    <include name="testGetRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <listeners>
+        <!--测试报告监听器-->
+        <listener class-name="utils.ExtentTestNGIReporterListener"/>
+    </listeners>
+</suite>
